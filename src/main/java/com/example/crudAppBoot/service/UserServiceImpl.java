@@ -1,11 +1,9 @@
 package com.example.crudAppBoot.service;
 
-
 import com.example.crudAppBoot.dao.UserDao;
 import com.example.crudAppBoot.model.User;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
@@ -36,13 +34,11 @@ public class UserServiceImpl implements UserService {
         userDao.deleteUser(id);
     }
 
-    @Transactional
     @Override
     public User getUserById(Long id) {
         return userDao.getUserById(id);
     }
 
-    @Transactional
     @Override
     public List<User> getAllUsers() {
         return userDao.getAllUsers();

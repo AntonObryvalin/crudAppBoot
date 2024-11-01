@@ -1,6 +1,5 @@
 package com.example.crudAppBoot.model;
 
-
 import jakarta.persistence.*;
 
 @Entity

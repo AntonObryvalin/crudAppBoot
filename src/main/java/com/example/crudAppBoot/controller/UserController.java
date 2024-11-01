@@ -1,11 +1,11 @@
 package com.example.crudAppBoot.controller;
 
-
 import com.example.crudAppBoot.model.User;
 import com.example.crudAppBoot.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,8 +28,7 @@ public class UserController {
     }
 
     @PostMapping("/users/add")
-    public String addUser(@RequestParam String name, @RequestParam String email) {
-        User user = new User(name, email);
+    public String addUser(@ModelAttribute User user) {
         userService.saveUser(user);
         return "redirect:/users";
     }
@@ -48,9 +47,7 @@ public class UserController {
     }
 
     @PostMapping("/users/update")
-    public String updateUser(@RequestParam Long id, @RequestParam String name, @RequestParam String email) {
-        User user = new User(name, email);
-        user.setId(id);
+    public String updateUser(@ModelAttribute User user) {
         userService.updateUser(user);
         return "redirect:/users";
     }

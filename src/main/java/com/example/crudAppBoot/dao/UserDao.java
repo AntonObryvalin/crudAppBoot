@@ -1,9 +1,6 @@
 package com.example.crudAppBoot.dao;
 
-
-
 import com.example.crudAppBoot.model.User;
-
 import java.util.List;
 
 public interface UserDao {
